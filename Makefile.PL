@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     "DBIx::Class" => 0,
     "DateTime" => 0
   },
-  "VERSION" => "0.122130",
+  "VERSION" => "0.122200",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -1,6 +1,6 @@
 package DBIx::Class::ColumnDefault;
 {
-  $DBIx::Class::ColumnDefault::VERSION = '0.122130';
+  $DBIx::Class::ColumnDefault::VERSION = '0.122200';
 }
 
 use strict;
@@ -21,7 +21,8 @@ sub insert {
         if (ref($dv) eq 'SCALAR' and $$dv =~ $fn_now) {
             $dv = DateTime->now;
         }
-        $self->set_column($column, $dv) if defined $dv;
+        my $accessor = $info->{accessor} || $column;
+        $self->$accessor($dv) if defined $dv;
     }
     $self->next::method(@_);
 }
@@ -36,7 +37,7 @@ DBIx::Class::ColumnDefault - Automatically set column default values on insert
 
 =head1 VERSION
 
-version 0.122130
+version 0.122200
 
 =head1 SYNOPSIS
 

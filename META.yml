@@ -19,4 +19,4 @@ requires:
   DateTime: 0
 resources:
   repository: git://github.com/gbarr/DBIx-Class-ColumnDefault.git
-version: 0.122130
+version: 0.122200
